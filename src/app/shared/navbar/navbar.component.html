@@ -11,8 +11,12 @@
           </li>
         </ul>
         <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Id Usuario" aria-label="Search">
-          <button class="btn btn-outline-success" type="button">Buscar</button>
+          <input #txtInput class="form-control me-2" type="search" placeholder="Id Usuario" aria-label="Search">
+          <button 
+                class="btn btn-outline-success" 
+                type="button"
+                (keyup.enter)="buscar(txtInput.value)"
+                (click)="buscar(txtInput.value)">Buscar</button>
         </form>
       </div>
     </div>
