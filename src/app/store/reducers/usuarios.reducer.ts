@@ -7,7 +7,7 @@ export interface UsuariosState {
     users: Usuario[],
     loaded: boolean,
     loading: boolean,
-    error: boolean
+    error: any
 }
 
 export const initialState: UsuariosState = {
@@ -33,7 +33,11 @@ const _usuariosReducer = createReducer(initialState,
             ...state, 
             loading: false,
             loaded:false,
-            error: payload
+            error: {
+                url:payload.url,
+                name: payload.name,
+                message: payload.message
+            }
         
         })),
 
