@@ -8,7 +8,15 @@
       <i class="fa fa-sync fa-spin -fa-2x"></i>
      </p>
      <hr>
-     <p class="mb-0">Alert Description</p>
+   <div 
+      class="alert alert-danger text-center" 
+      *ngIf="error"
+      role="alert">
+     <h4 class="alert-heading">Error</h4>
+     <pre>
+      {{error | json }}
+     </pre>
+     <hr>
    </div>
 
       <div 
