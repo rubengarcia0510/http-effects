@@ -10,14 +10,18 @@
             <a class="nav-link" routerLink="/usuario/1">Usuario</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input #txtInput class="form-control me-2" type="search" placeholder="Id Usuario" aria-label="Search">
+        <div class="d-flex" role="search">
+          <input #txtInput 
+                  class="form-control me-2" 
+                  type="search" 
+                  placeholder="Id Usuario" 
+                  (keyup.enter)="buscar(txtInput.value)"
+                  aria-label="Search">
           <button 
                 class="btn btn-outline-success" 
-                type="button"
-                (keyup.enter)="buscar(txtInput.value)"
+                type="button"               
                 (click)="buscar(txtInput.value)">Buscar</button>
-        </form>
+        </div>
       </div>
     </div>
   </nav>

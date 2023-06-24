@@ -7,6 +7,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class UsuariosService {
+  
 
   private url:string = 'https://reqres.in/api'
 
@@ -18,4 +19,11 @@ export class UsuariosService {
                         map( resp=> resp['data'])
                     )
   }
+
+  getUser(id: string):Observable<any> {
+    return this.http.get(this.url+'/users/'+id)
+        .pipe(
+            map( resp=> resp['data'])
+        )
+}
 }
