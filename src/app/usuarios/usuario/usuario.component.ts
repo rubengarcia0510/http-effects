@@ -12,7 +12,9 @@ import { AppState } from 'src/app/store/app.reducers';
 })
 export class UsuarioComponent implements OnInit {
 
-  usuario: Usuario
+  usuario: Usuario = undefined
+  loading:boolean=false
+  error:any
 
   constructor(private route: ActivatedRoute,
               private store: Store<AppState>
@@ -21,7 +23,12 @@ export class UsuarioComponent implements OnInit {
   ngOnInit(): void {
 
     this.store.select('user')
-          .subscribe(user=>this.usuario = user.user)
+          .subscribe(data=>{
+            console.log(data)
+            this.usuario = data.user
+            this.loading = data.loading
+            this.error = data.error
+          })
 
     this.route.params.subscribe(data => 
           this.store.dispatch(loadUser({id:data.id}))

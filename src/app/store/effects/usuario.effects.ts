@@ -23,7 +23,7 @@ export class UsuarioEffects{
                     (action) => this.userService.getUser(action.id)
                                 .pipe( 
                                     map( user => userActions.successLoadUser({user})),
-                                    catchError( error => of(userActions.errorLoadUsers({payload:error})))
+                                    catchError( error => of(userActions.errorLoadUser({payload:error})))
                                 )
                 )
                 );
