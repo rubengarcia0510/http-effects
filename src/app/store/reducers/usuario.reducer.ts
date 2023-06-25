@@ -31,6 +31,7 @@ const _usuarioReducer = createReducer(usuarioInitialState,
             ...state, 
             loading:false,
             loaded: true,
+            error:null,
             user:{...user}
         
         })),
