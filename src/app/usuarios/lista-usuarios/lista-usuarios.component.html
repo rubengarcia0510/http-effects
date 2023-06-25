@@ -1,13 +1,40 @@
+   
+   <div 
+      class="alert alert-info text-center" 
+      *ngIf="loading"
+      role="alert">
+     <h4 class="alert-heading">Cargando...</h4>
+     <p>
+      <i class="fa fa-sync fa-spin -fa-2x"></i>
+     </p>
+     <hr>
+   </div>
+   <div 
+      class="alert alert-danger text-center" 
+      *ngIf="error"
+      role="alert">
+     <h4 class="alert-heading">Error</h4>
+     <pre>
+      {{error | json }}
+     </pre>
+     <hr>
+   </div>
 
-    <div class="container">
+      <div 
+          class="card-group"
+          *ngIf="!loading"
+          >
+
         <div class="card" *ngFor="let usuario of usuarios">
           <img [src]="usuario.avatar" class="card-img-top mediana" alt="...">
           <div class="card-body">
             <h5 class="card-title">{{usuario.first_name}} {{usuario.last_name}}</h5>
             <p class="card-text">email : {{usuario.email}}</p>
-            <p class="card-text">ID : {{usuario.id}}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-body-secondary">ID : {{usuario.id}}</small>
           </div>
         </div>
+        
       </div>
-    
 

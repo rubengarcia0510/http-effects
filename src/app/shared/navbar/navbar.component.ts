@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
+  id:number=0
+
 
   constructor(private router:Router) { }
 
@@ -17,6 +19,7 @@ export class NavbarComponent implements OnInit {
   buscar(id: any) {
     if(!id) return;
 
+    this.id=id
     this.router.navigate(['/usuario',id]);
     }
 
