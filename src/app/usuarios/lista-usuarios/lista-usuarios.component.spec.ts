@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListaUsuariosComponent } from './lista-usuarios.component';
+import { HttpClientModule } from '@angular/common/http';
+import { Store, StoreModule } from '@ngrx/store';
 
 describe('ListaUsuariosComponent', () => {
   let component: ListaUsuariosComponent;
@@ -8,7 +10,8 @@ describe('ListaUsuariosComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListaUsuariosComponent ]
+      declarations: [ ListaUsuariosComponent ],
+      imports: [HttpClientModule,StoreModule.forRoot({})]
     })
     .compileComponents();
   });
